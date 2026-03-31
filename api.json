@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "8585-ems-collection",
+    "name": "Employee Management System - Full APIs",
+    "description": "All APIs for Employee Management System running on port 8585",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "🔐 Login - Admin",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"encrypted_pass\"\n}"
+        },
+        "url": { "raw": "http://localhost:8585/api/auth/login", "protocol": "http", "host": ["localhost"], "port": "8585", "path": ["api", "auth", "login"] }
+      }
+    },
+    {
+      "name": "👨‍💼 Employee APIs",
+      "item": [
+        {
+          "name": "Get All Employees",
+          "request": { "method": "GET", "url": "http://localhost:8585/api/employees" }
+        },
+        {
+          "name": "Get Employee by ID",
+          "request": { "method": "GET", "url": "http://localhost:8585/api/employees/1" }
+        },
+        {
+          "name": "Add Employee",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"empName\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"departmentId\": 1,\n  \"designationId\": 1,\n  \"salary\": 55000.0\n}"
+            },
+            "url": "http://localhost:8585/api/employees"
+          }
+        },
+        {
+          "name": "Delete Employee",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8585/api/employees/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "🏢 Department APIs",
+      "item": [
+        {
+          "name": "Get All Departments",
+          "request": { "method": "GET", "url": "http://localhost:8585/api/departments" }
+        },
+        {
+          "name": "Get Department by ID",
+          "request": { "method": "GET", "url": "http://localhost:8585/api/departments/1" }
+        },
+        {
+          "name": "Add Department",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deptName\": \"IT Department\"\n}"
+            },
+            "url": "http://localhost:8585/api/departments"
+          }
+        },
+        {
+          "name": "Delete Department",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8585/api/departments/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "💼 Designation APIs",
+      "item": [
+        {
+          "name": "Get All Designations",
+          "request": { "method": "GET", "url": "http://localhost:8585/api/designations" }
+        },
+        {
+          "name": "Get Designation by ID",
+          "request": { "method": "GET", "url": "http://localhost:8585/api/designations/1" }
+        },
+        {
+          "name": "Add Designation",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"desigName\": \"Software Engineer\"\n}"
+            },
+            "url": "http://localhost:8585/api/designations"
+          }
+        },
+        {
+          "name": "Delete Designation",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8585/api/designations/1"
+          }
+        }
+      ]
+    }
+  ]
+}
