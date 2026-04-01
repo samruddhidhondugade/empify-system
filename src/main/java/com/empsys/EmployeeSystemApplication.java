@@ -8,7 +8,7 @@ public class EmployeeSystemApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EmployeeSystemApplication.class, args);
-		System.out.println("Welcome to empify!");
+		System.out.println("Welcome_to_empify");
 	}
 
 }
